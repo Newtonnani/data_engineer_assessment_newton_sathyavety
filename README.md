@@ -68,7 +68,7 @@ generate formated README.md file
 
 Here is a formatted `README.md` file content based on your provided summary, ready for your project submission:
 
-```markdown
+
 # Data Engineering Assessment
 
 ## Database Design and Solution
