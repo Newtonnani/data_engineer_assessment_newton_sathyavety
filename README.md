@@ -178,5 +178,3 @@ All source codes, schema, and scripts required to reproduce end-to-end data inge
 ---
 
 For any questions or clarifications, please contact me via the repository.
-
-```
