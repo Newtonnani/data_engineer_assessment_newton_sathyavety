@@ -141,59 +141,6 @@ The schema design balances normalization with the need to preserve all raw data 
 
 ---
 
-## How to Run and Test the Scripts
-
-### Prerequisites
-- Install Python 3.8 or higher
-- Docker Desktop running and configured
-- MySQL Docker container as specified below
-- Network connectivity to `localhost:3306`
-
-### Step-by-step
-
-1. Clone the repo and rename the directory to include your full name:
-```
-
-git clone https://github.com/100x-Home-LLC/data_engineer_assessment.git  
-mv data_engineer_assessment data_engineer_assessment_newton_sathyavety  
-cd data_engineer_assessment_newton_sathyavety  
-
-```
-
-2. Start the MySQL Docker container:
-```
-
-docker-compose -f docker-compose.initial.yml up --build -d
-
-```
-
-3. Create your normalized schema in the MySQL database:
-```
-
-mysql -u root -p6equj5_root home_db < sql/01_schema.sql
-
-```
-
-4. Install required Python libraries:
-```
-
-pip install -r requirements.txt
-
-```
-
-5. Use the raw JSON data file at `data/fake_property_data.json`.
-
-6. Run the ETL script to ingest and normalize data:
-```
-
-python scripts/etl-script.py
-
-```
-
-7. Verify the data is successfully loaded and normalized into the MySQL tables.
-
----
-
 ## ETL Logic
 
 - The ETL is implemented in Python in `scripts/etl-script.py`.
@@ -217,10 +164,15 @@ All dependencies are listed in `requirements.txt`. Key packages include:
 ### Example `requirements.txt`:
 ```
 
-mysql-connector-python==8.0.33  
-pandas==2.0.3  
-python-dotenv==1.0.0  
-numpy==1.24.3  
+mysql-connector-python==8.0.33
+numpy==1.24.3
+pandas==2.0.3
+protobuf==3.20.3
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.0
+pytz==2025.2
+six==1.17.0
+tzdata==2025.2
 
 ```
 
